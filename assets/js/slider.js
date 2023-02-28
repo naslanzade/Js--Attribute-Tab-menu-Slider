@@ -47,9 +47,5 @@ function leftSlider() {
     }
 }
 
-
-
-
-
 leftIcon.addEventListener("click", leftSlider);
 rightIcon.addEventListener("click", rightSlider);
