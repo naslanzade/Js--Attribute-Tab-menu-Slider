@@ -3,7 +3,25 @@
 
 let leftIcon = document.querySelector(".main .left");
 let rightIcon = document.querySelector(".main .right");
-let lines = document.querySelectorAll(".main .line");
+let lines = document.querySelector(".main .nav-dots")
+
+
+
+lines.addEventListener("click",e=>{
+    let targetLine=e.target.closest("div");
+    let activeImage=document.querySelectorAll("img");  
+    
+    activeImage.forEach(image => {
+        if(image.getAttribute("data-id")==targetLine.getAttribute("data-id")){
+            image.classList.add("active-image")
+        }else{
+            image.classList.remove("active-image")
+        }
+        
+    });
+
+    if(!targetLine) return;
+});
 
 
 
@@ -15,6 +33,7 @@ function rightSlider() {
     } else {
         activeImage.parentNode.firstElementChild.classList.add("active-image");
     }
+
 }
 
 
@@ -29,19 +48,8 @@ function leftSlider() {
 }
 
 
-function dots() {
-    let activeImage = document.querySelector(".active-image");
-    activeImage.classList.remove("active-image");
-    if (activeImage.getAttribute("data-id") == lines.getAttribute("data-id")) {
-        lines.classList.add("active");
-    } else {
-        lines.classList.remove("active");
-    }
-}
 
 
-// lines.addEventListner("click", dots);
-
-rightIcon.addEventListener("click", rightSlider);
 
 leftIcon.addEventListener("click", leftSlider);
+rightIcon.addEventListener("click", rightSlider);
