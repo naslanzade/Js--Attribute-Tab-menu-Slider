@@ -1,7 +1,8 @@
 "use strict";
 let leftIcon = document.querySelector(".heading .left");
 let rightIcon = document.querySelector(".heading .right");
-
+let card=document.querySelector("#main .card");
+console.log
 
 
 
@@ -39,6 +40,8 @@ rightIcon.addEventListener("click", function () {
     }
 
 })
+
+
 
 
 
